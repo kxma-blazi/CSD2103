@@ -1,0 +1,36 @@
+O(n!) คือความซับซ้อนของอัลกอริทึมที่เพิ่มเป็นลำดับเรขาคณิตของขนาดข้อมูล (n)
+
+-Code-------------------------------------------------
+
+import java.util.Arrays;
+
+public class FactorialTimeExample {
+    public static void main(String[] args) {
+        int[] elements = {1, 2, 3};
+        generatePermutations(elements, 0);
+    }
+
+    // ฟังก์ชันสำหรับการสร้างคำสั่งทั้งหมดของการจัดเรียง
+    // โดยเริ่มจากสับคำแรกที่เป็นค่าคงที่และแล้วเรียกตัวเองสำหรับส่วนที่เหลือ
+    public static void generatePermutations(int[] elements, int currentIndex) {
+        int n = elements.length;
+        if (currentIndex == n - 1) {
+            System.out.println(Arrays.toString(elements));
+            return;
+        }
+
+        for (int i = currentIndex; i < n; i++) {
+            // Swap elements[currentIndex] และ elements[i]
+            int temp = elements[currentIndex];
+            elements[currentIndex] = elements[i];
+            elements[i] = temp;
+
+            generatePermutations(elements, currentIndex + 1);
+
+            // Swap กลับเพื่อให้ array กลับสู่สถานะเดิม
+            temp = elements[currentIndex];
+            elements[currentIndex] = elements[i];
+            elements[i] = temp;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+---------Code---------
+public class O(1)Example {
+    public static void main(String[] args) {
+        int num1 = 10;      // กำหนดค่าตัวแปร num1 เป็น 10
+        int num2 = 20;      // กำหนดค่าตัวแปร num2 เป็น 20
+        
+        int result = addNumbers(num1, num2);  // เรียกใช้เมธอด addNumbers และเก็บผลลัพธ์ไว้ในตัวแปร result
+        System.out.println("The result is: " + result);  // แสดงผลลัพธ์ทางหน้าจอ
+    }
+    
+    public static int addNumbers(int a, int b) {
+        int sum = a + b;  // ทำการบวกค่าของ a และ b และเก็บผลลัพธ์ไว้ในตัวแปร sum
+        return sum;       // คืนค่าผลลัพธ์ที่คำนวณได้
+    }
+}
+
+---------------------
+
+Node newNode = new Node(data); // สร้างโหนดใหม่
+newNode.next = list.head; // กำหนดโหนดใหม่ให้เป็นหัวของลิงก์ลิสต์
+list.head = newNode; // อัปเดตหัวของลิงก์ลิสต์ใหม่

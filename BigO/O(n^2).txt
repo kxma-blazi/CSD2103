@@ -1,0 +1,35 @@
+public class BubbleSortExample {
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+
+        bubbleSort(arr);
+
+        System.out.println("Sorted array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+
+    // ฟังก์ชัน Bubble Sort
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+
+        // ลูปเรียกใช้งานภายนอกครั้งเดียวในการแก้จนกว่าอาร์เรย์จะเรียงลำดับ
+        for (int i = 0; i < n - 1; i++) {
+            // ลูปเข้าภายในครั้งหลังสุดในแต่ละการเรียกใช้งานภายนอกเพื่อสลับคู่ค่าที่ไม่ถูกต้อง
+            for (int j = 0; j < n - i - 1; j++) {
+                // ตรวจสอบคู่ค่าที่ติดกัน และสลับเข้ากันหากเรียงลำดับไม่ถูกต้อง
+                if (arr[j] > arr[j + 1]) {
+                    // สลับค่าสองตัวแปร
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+-------------------code---------------------------------
+
+O(n^2) คือโค้ดที่มีเวลาการทำงานเพิ่มขึ้นเป็นไปตามอัตรากำลังสองของขนาดของข้อมูล n ที่นำเข้า

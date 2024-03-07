@@ -1,0 +1,32 @@
+for (int i = 0; i < n; i++) {
+    // คำสั่งที่มีการทำงานอย่างน้อย n ครั้ง
+}
+O(n) คือการใช้เวลาที่เพิ่มขึ้นเป็นอัตราเส้นตรงเมื่อขนาดข้อมูล n เพิ่มขึ้น 
+
+----Code----------------------------------
+
+public class LinearTimeExample {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+
+        int max = findMax(arr);
+        System.out.println("The maximum value is: " + max);
+    }
+
+    public static int findMax(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+
+        int max = arr[0]; // กำหนดค่าเริ่มต้นเป็นสมาชิกแรกของอาร์เรย์
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i]; // หาค่าที่มากที่สุดและปรับค่า max ตาม
+            }
+        }
+
+        return max;
+    }
+}
+
+
