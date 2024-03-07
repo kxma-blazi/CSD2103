@@ -1,0 +1,42 @@
+/*  ================================================================
+        Step 1 : Find the deletion node หาโหนดที่ต้องการลบ
+    ================================================================ */
+
+p= findNode(x);
+
+succ = p.right;
+succParent = p;
+
+/* ================================================================
+    Take care of the special case เลือกโหนด
+    ================================================================ */
+
+if (succ.left == null) // Special case detected !
+{
+    p.value = succ.value; // Replace p Value
+
+    p.right = succ.right; // Replace p right subtree
+    return; // Done
+}
+
+/*  ================================================================
+        Step 2 : Find the successor node in right subtree of p หาโหนดที่ต้องการลบในฝั่งขวา
+    ================================================================ */
+
+while ( succ.left != null )
+{
+    succParent = succ; // Track succ's parent !
+    succ = succ.left; // Always go left to find min. Value
+}
+
+/*  ================================================================
+        Step 3 : right content of p with successor node หาโหนดที่ต้องการลบ
+    ================================================================ */
+
+    p.value = succ.value;
+
+/*  ================================================================
+        Step 4 : delete successor node หาโหนดที่ต้องการลบ
+    ================================================================ */
+
+    succParent.left = succ.right;
