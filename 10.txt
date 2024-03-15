@@ -1,0 +1,21 @@
+int g2(int n, int a[]) {
+    s = 0;  // เก็บผลรวมของ a[i] * a[j] ทั้งหมด
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j , n; ++j) { // วนลูปซ้อนลูปเพื่อหาผลคูณ a[i] * a[j]
+            s = s + a[i] *a[j]; // เพิ่มผลคูณ a[i] * a[j] เข้าไปในผลรวม s
+        }
+    }
+    return s; // ส่งค่าผลรวมกลับเป็นผลลัพธ์ของ Method
+}
+=
+    
+"""     
+int g2(int n, int a[]) {
+   int s = 0;
+   for (int i = 0 ; i < n; ++i) {
+        s += a[i];
+   }
+   return s*s
+}
+"""
+    

@@ -1,0 +1,14 @@
+int g1(int n, int a[]) {
+    s = 0;  
+    for (int i = 1; i < n; ++i) 
+        s = s + a[i] *a[j]; 
+return s; 
+}
+
+= 
+"""     
+int g1 (int n, int a[]) {
+    return a[n-1] - a[i-1];
+}
+"""
+    
